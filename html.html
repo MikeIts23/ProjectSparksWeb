@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sparks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Includi Ethers.js per l'integrazione Web3 -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">☰</div>
+      <div class="logo">Welcome Sparky</div>
+      <div class="header-buttons">
+        <button class="btn-login">Login</button>
+        <button class="btn-register">Register</button>
+        <button id="btnConnectWallet" class="btn-connect">🌐 Connect Wallet</button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="menuOverlay" class="menu-overlay">
+    <div class="menu-content">
+      <ul class="menu-items">
+        <li class="has-submenu">
+          <a href="#giochi">I NOSTRI GIOCHI</a>
+          <ul class="submenu">
+            <li><a href="#academy">ACADEMY</a></li>
+            <li><a href="#collezione">LA NOSTRA COLLEZIONE</a></li>
+            <li><a href="#moneta">LA NOSTRA MONETA</a></li>
+          </ul>
+        </li>
+        <li><a href="#roadmap">ROADMAP</a></li>
+        <li><a href="#vision">VISION</a></li>
+        <li><a href="#community">COMMUNITY</a></li>
+        <li><a href="#tokenomics">TOKENOMICS</a></li>
+        <li><a href="#team">TEAM E ADVISOR</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="menu-buttons">
+          <a href="https://drive.google.com/file/d/1PqmZtpHVjh6OhwbV3kIIiAjScLW94j_Y/view" target="_blank" class="btn-whitepaper">Whitepaper</a>
+        <button class="btn-contact">Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEZIONE HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">ESPLORA LO SPAZIO COME MAI PRIMA D'ORA</h1>
+      <p class="hero-subtitle">
+        Scopri la potenza dell'innovazione spaziale e unisciti a noi.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="number" data-target="15">0</span>
+          <p>🚀 Missioni Completate</p>
+        </div>
+        <div class="stat">
+          <span class="number" data-target="500000">0</span>
+          <p>🌠 Utenti Esploratori</p>
+        </div>
+        <div class="stat">
+          <span class="number" data-target="100000">0</span>
+          <p>💰 Transazioni Galattiche</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-images">
+      <img src="https://via.placeholder.com/600x400?text=Galassia" alt="Galassia">
+      <img src="https://via.placeholder.com/400x300?text=Pianeti" alt="Pianeti">
+      <img src="https://via.placeholder.com/500x350?text=Astronave" alt="Astronave Digitale">
+    </div>
+  </section>
+<!--sezione della mission del progetto-->
+  <section id="mission" class="mission">
+    <h2>Mission</h2>
+    <p>
+      Il futuro dello spazio digitale è qui. Unisciti a noi in un viaggio verso nuove tecnologie e scoperte.
+    </p>
+    <div class="mission-icons">
+      <div class="icon-item">
+        <span class="icon">🚀</span>
+        <p>Viaggi Interstellari</p>
+      </div>
+      <div class="icon-item">
+        <span class="icon">🛰</span>
+        <p>Esplorazione</p>
+      </div>
+      <div class="icon-item">
+        <span class="icon">🌐</span>
+        <p>Innovazione Tecnologica</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE I NOSTRI GIOCHI -->
+  <section id="giochi" class="giochi">
+    <h2>I nostri giochi</h2>
+    <p>Scopri le nostre esperienze interattive</p>
+    <div class="games-cards">
+      <div class="game-card">
+        <img src="Screenshot 2025-02-12 142008.png" alt="Space Resources">
+        <a href="https://gd.games/instant-builds/3a7d6271-849c-4f25-ab20-1fec6c6adaa3" target="_blank" class="btn-game-play">Play Now</a>
+      </div>
+      <div class="game-card coming-soon">
+        <div class="coming-soon-overlay">
+          <span>COMING SOON - OUR FIRST MOBILE APP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="academy" class="academy">
+    <h2 class="academy-title">Academy</h2>
+    <p class="academy-disclaimer">
+      Metti alla prova le tue conoscenze spaziali e approfondisci le tue competenze con il nostro corso interattivo!
+    </p>
+    <div class="academy-cards">
+      <div class="academy-card quiz-card">
+        <div class="card-book">
+          <img src="screen2.png" alt="Educational Quiz">
+          <div class="card-content">
+            <h3>Edu-Quiz</h3>
+            <p>Sfida te stesso e scopri se sei un vero esploratore galattico.</p>
+            <a href="https://apps.drimify.com/pQyLQx9P/" target="_blank" class="btn-card">Play Now</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="academy-card course-card">
+        <div class="card-book">
+          <img src="screen3.png" alt="Course">
+          <div class="card-content">
+            <h3>Mini Course</h3>
+            <p>Basics of Space Systems Engineering</p>
+            <a href="https://app.mindsmith.ai/learn/cm17nwd7a00i2rhavpy0vobxs" target="_blank" class="btn-card">Learn Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE LA NOSTRA COLLEZIONE -->
+  <section id="collezione" class="collezione">
+    <h2>La Nostra Collezione</h2>
+    <p>
+      Scopri NFT unici a tema spaziale
+    </p>
+    <div class="nft-gallery">
+      <div class="nft-item">
+        <img src="astronauta1.jpg" alt="NFT 1">
+        <div class="nft-info">NFT 1 - Edizione Limitata</div>
+      </div>
+      <div class="nft-item">
+        <img src="astronauta2.jpg" alt="NFT 2">
+        <div class="nft-info">NFT 2 - Edizione Speciale</div>
+      </div>
+      <div class="nft-item">
+        <img src="astronauta3.jpg" alt="NFT 3">
+        <div class="nft-info">NFT 3 - Collezione Galattica</div>
+      </div>
+    </div>
+    <button class="btn-nft">Scopri la Collezione</button>
+  </section>
+
+  <section id="moneta" class="token-section">
+    <div class="container">
+      <h2 class="section-title">Our Coin 'Sparky'</h2>
+      <p class="section-subtitle">La valuta che collega spazio e terra.</p>
+      <div class="token-cards">
+        <div class="token-card">
+          <div class="card-icon">💰</div>
+          <h3>Transazioni Galattiche</h3>
+          <p>Esegui pagamenti e scambia asset in un mondo senza limiti.</p>
+        </div>
+        <div class="token-card">
+          <div class="card-icon">🚀</div>
+          <h3>Missioni Completate</h3>
+          <p>Decidi missioni spaziali ed entra nella storia.</p>
+        </div>
+        <div class="token-card">
+          <div class="card-icon">🔒</div>
+          <h3>Sicurezza Avanzata</h3>
+          <p>Proteggi i tuoi asset con tecnologie blockchain all'avanguardia.</p>
+        </div>
+      </div>
+      <div class="floating-coins">
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="roadmap">
+    <h2>Roadmap Spaziale</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon">🚀</div>
+        <div class="timeline-content">
+          <h3>Fase 1: Lancio</h3>
+          <p>Avvio del progetto e primo lancio di test.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon">🛰</div>
+        <div class="timeline-content">
+          <h3>Fase 2: Espansione</h3>
+          <p>Integrazione di nuove funzionalità e ampliamento della community.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon">🌌</div>
+        <div class="timeline-content">
+          <h3>Fase 3: Dominio Spaziale</h3>
+          <p>Completamento delle missioni e lancio delle funzionalità avanzate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vision" class="vision">
+    <h2>Vision</h2>
+    <p>
+      La nostra visione è quella di un universo digitale dove innovazione e tecnologia spaziale si fondono per creare nuove opportunità.
+    </p>
+  </section>
+
+  <section id="community" class="community">
+    <h2>Community Galattica</h2>
+    <p>
+      Unisciti alla nostra community e diventa parte integrante dell'esplorazione spaziale. Connettiti con altri esploratori e condividi la passione per l'universo digitale.
+    </p>
+    <div class="community-buttons">
+      <a href="#" class="btn-community">Discord</a>
+      <a href="#" class="btn-community">Telegram</a>
+      <a href="#" class="btn-community">Twitter</a>
+    </div>
+  </section>
+
+  <section id="tokenomics" class="tokenomics">
+    <h2>Tokenomics</h2>
+    <p>
+      Approfondisci le dinamiche economiche e tecniche alla base del nostro token, la valuta dell'universo digitale.
+    </p>
+  </section>
+
+
+  <section id="team" class="team">
+    <h2>Team e Advisor</h2>
+    <p>
+      Conosci il nostro team di esperti e advisor, pronti a guidare l'innovazione nello spazio digitale.
+    </p>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>FAQ</h2>
+    <p>
+      Trova le risposte alle domande più frequenti riguardo al nostro progetto e all'universo digitale.
+    </p>
+  </section>
+
+
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#mission">Mission</a>
+        <a href="#tokenomics">Token</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="newsletter">
+        <p>Iscriviti alla newsletter per aggiornamenti spaziali:</p>
+        <form id="newsletterForm">
+          <input type="email" placeholder="La tua email" required>
+          <button type="submit">Iscriviti</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>© 2025 Universo Digitale. Tutti i diritti riservati. | Disclaimer legale</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
