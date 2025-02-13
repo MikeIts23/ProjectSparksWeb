@@ -6,7 +6,6 @@
   <title>Sparks</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <!-- Includi Ethers.js per l'integrazione Web3 -->
   <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 </head>
 <body>
@@ -49,33 +48,37 @@
   </div>
 
   <!-- SEZIONE HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">ESPLORA LO SPAZIO COME MAI PRIMA D'ORA</h1>
-      <p class="hero-subtitle">
-        Scopri la potenza dell'innovazione spaziale e unisciti a noi.
-      </p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="number" data-target="15">0</span>
-          <p>🚀 Missioni Completate</p>
-        </div>
-        <div class="stat">
-          <span class="number" data-target="500000">0</span>
-          <p>🌠 Utenti Esploratori</p>
-        </div>
-        <div class="stat">
-          <span class="number" data-target="100000">0</span>
-          <p>💰 Transazioni Galattiche</p>
-        </div>
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">ESPLORA LO SPAZIO COME MAI PRIMA D'ORA</h1>
+    <p class="hero-subtitle">
+      Scopri la potenza dell'innovazione spaziale e unisciti a noi.
+    </p>
+    <!-- Contatori aggiornati con icone animate -->
+    <div class="hero-stats">
+      <div class="stat">
+        <!-- Icona del razzo -->
+        <div class="stat-icon rocket-icon"></div>
+        <span class="number" data-target="15">0</span>
+        <p>Missioni Completate</p>
+      </div>
+      <div class="stat">
+        <!-- Icona dell'astronauta -->
+        <div class="stat-icon astronaut-icon"></div>
+        <span class="number" data-target="500000">0</span>
+        <p>Utenti Esploratori</p>
+      </div>
+      <div class="stat">
+        <!-- Icona dello scambio di monete -->
+        <div class="stat-icon exchange-icon"></div>
+        <span class="number" data-target="100000">0</span>
+        <p>Transazioni Galattiche</p>
       </div>
     </div>
-    <div class="hero-images">
-      <img src="https://via.placeholder.com/600x400?text=Galassia" alt="Galassia">
-      <img src="https://via.placeholder.com/400x300?text=Pianeti" alt="Pianeti">
-      <img src="https://via.placeholder.com/500x350?text=Astronave" alt="Astronave Digitale">
-    </div>
-  </section>
+  </div>
+  <div class="hero-images">
+  </div>
+</section>
 <!--sezione della mission del progetto-->
   <section id="mission" class="mission">
     <h2>Mission</h2>
@@ -200,27 +203,28 @@
 
   <section id="roadmap" class="roadmap">
     <h2>Roadmap Spaziale</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-icon">🚀</div>
-        <div class="timeline-content">
-          <h3>Fase 1: Lancio</h3>
-          <p>Avvio del progetto e primo lancio di test.</p>
-        </div>
+    <div class="roadmap-container">
+      <!-- SVG che disegna la traiettoria curvilinea -->
+      <svg class="roadmap-path" viewBox="0 0 800 200" preserveAspectRatio="none">
+        <path d="M50,150 C200,50 600,50 750,150" stroke="#F4B007" stroke-width="4" fill="none" stroke-dasharray="8,8" />
+      </svg>
+      <!-- Fase 1: Lancio -->
+      <div class="roadmap-item item-1">
+        <div class="item-icon rocket-icon">🚀</div>
+        <h3>Fase 1: Lancio</h3>
+        <p>Un razzo pronto a partire con scie luminose.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-icon">🛰</div>
-        <div class="timeline-content">
-          <h3>Fase 2: Espansione</h3>
-          <p>Integrazione di nuove funzionalità e ampliamento della community.</p>
-        </div>
+      <!-- Fase 2: Espansione -->
+      <div class="roadmap-item item-2">
+        <div class="item-icon spaceship-icon">🌌</div>
+        <h3>Fase 2: Espansione</h3>
+        <p>Una navicella in viaggio tra le stelle, in crescita.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-icon">🌌</div>
-        <div class="timeline-content">
-          <h3>Fase 3: Dominio Spaziale</h3>
-          <p>Completamento delle missioni e lancio delle funzionalità avanzate.</p>
-        </div>
+      <!-- Fase 3: Dominio Spaziale -->
+      <div class="roadmap-item item-3">
+        <div class="item-icon station-icon">🛰️</div>
+        <h3>Fase 3: Dominio Spaziale</h3>
+        <p>Una stazione spaziale conquistata, traguardo raggiunto.</p>
       </div>
     </div>
   </section>
