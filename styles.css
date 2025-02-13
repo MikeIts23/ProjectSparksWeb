@@ -951,4 +951,127 @@ footer {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(244, 176, 7, 0.8);
 }
+/* =======================
+   SEZIONE TEAM E ADVISOR
+========================= */
+.team {
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.team h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  color: #F4B007;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #F4B007;
+}
+
+/* Container dello slider */
+.team-slider {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Wrapper per nascondere l'overflow */
+.slider-wrapper {
+  overflow: hidden;
+}
+
+/* Track per scorrere gli elementi */
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Stile per ogni membro (card) */
+.team-member {
+  flex: 0 0 auto;
+  width: 220px; /* Immagini più grandi */
+  margin: 0 20px; /* Maggiore spazio tra le card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(244, 176, 7, 0.8);
+}
+
+/* Stile per le informazioni (nome e ruolo) */
+.member-info {
+  margin-top: 10px;
+}
+
+.member-info h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #F4B007;
+  margin: 5px 0;
+}
+
+.member-info p {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* FRECCE DI NAVIGAZIONE */
+/* Le frecce sono posizionate agli estremi e non si muovono con lo slider */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #F4B007;
+  font-size: 30px;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.left-arrow {
+  left: 0; /* Posizionata all'estremo sinistro */
+}
+
+.right-arrow {
+  right: 0; /* Posizionata all'estremo destro */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .team-member {
+    width: 160px;
+    margin: 0 10px;
+  }
+
+  .team-member img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .slider-arrow {
+    font-size: 24px;
+    padding: 10px;
+  }
+}
+
+
 
