@@ -906,3 +906,49 @@ footer {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+/* ===============================
+   SEZIONE COMMUNITY GALATTICA
+================================= */
+.community {
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent; /* Il background del body è già dark */
+}
+
+.community h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  color: #F4B007;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #F4B007;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* Maggiore spazio tra le icone */
+  flex-wrap: wrap;
+}
+
+.social-icon img {
+  width: 200px;  /* Dimensioni maggiori */
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Animazione leggera di oscillazione */
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Effetto oscillazione */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Effetto hover: ingrandimento e glow/neon sobrio */
+.social-icon:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(244, 176, 7, 0.8);
+}
+
