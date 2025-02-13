@@ -659,4 +659,95 @@ body {
     font-size: 14px;
     color: #ccc;
   }
-  
+  /* SEZIONE AUTH (Login / Registrazione) */
+.auth-section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(244, 176, 7, 0.5);
+}
+
+.auth-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  color: #F4B007;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(244, 176, 7, 0.7);
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.auth-form input::placeholder {
+  color: #000;
+}
+
+.btn-auth {
+  width: 100%;
+  padding: 12px;
+  background-color: #F4B007;
+  border: none;
+  border-radius: 4px;
+  color: #000080;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-auth:hover {
+  background-color: #e0a800;
+  box-shadow: 0 0 10px #F4B007;
+}
+
+.auth-social {
+  margin-top: 20px;
+}
+
+.auth-social p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 12px;
+  background-color: #DB4437; /* Google Red */
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-google:hover {
+  background-color: #C33D2E;
+  box-shadow: 0 0 10px rgba(219, 68, 55, 0.7);
+}
+
+.auth-switch {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.auth-switch a {
+  color: #F4B007;
+  text-decoration: underline;
+}
