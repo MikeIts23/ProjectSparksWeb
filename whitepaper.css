@@ -1,145 +1,192 @@
-
+/* BODY & BACKGROUND */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #001A33, #000B1A);
+    background: linear-gradient(135deg, #001A33, #000B1A); /* scuro futuristico */
     background-attachment: fixed;
     color: #fff;
     overflow-x: hidden;
   }
-  a {
-    text-decoration: none;
-    color: inherit;
+  
+  /* HEADER + SIDEBAR UNIFICATI */
+  
+  /* Header */
+  .wp-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.9); /* Stesso colore scuro della sidebar */
+    position: relative;
+    border-bottom: 2px solid #F4B007;
+}
+  
+  .back-button {
+    position: absolute;
+    left: 20px;
+    /* Stile simile a "Discover Collection" */
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #F4B007; /* Sfondo giallo */
+    border: none;
+    border-radius: 8px; /* Angoli arrotondati */
+    color: #000080; /* Testo blu */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* HEADER */
-  .whitepaper-header {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.8);
+  .back-button:hover {
+    background-color: #e0a800; /* Hover più scuro */
+    box-shadow: 0 0 10px #F4B007; /* Effetto glow giallo */
   }
-  .whitepaper-header .logo {
+  
+  
+  .wp-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 28px;
     color: #F4B007;
+    text-transform: uppercase;
     text-shadow: 0 0 10px #F4B007;
   }
+  .search-box {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .search-box input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 150px;
+  }
+  .search-box button {
+    background: #F4B007;
+    border: none;
+    border-radius: 4px;
+    color: #000080;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: background 0.3s ease;
+  }
+  .search-box button:hover {
+    background: #e0a800;
+  }
   
-  .toc {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 80px auto;
-    text-align: left;
-    border-left: 4px solid #F4B007;
+  /* Layout (Sidebar + Content) */
+  .wp-layout {
+    display: flex;
+    margin-top: 0; /* Nessun gap, per unificare con header */
   }
-  .toc h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
+  .wp-sidebar {
+    width: 250px;
+    background: rgba(0,0,0,0.9); /* Uguale all'header per continuità */
+    min-height: 100vh;
+    padding: 20px;
+    border-right: 2px solid rgba(244, 176, 7, 0.6);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+  }
+  .sidebar-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
     color: #F4B007;
-    text-shadow: 0 0 8px #F4B007;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #F4B007;
   }
-  .toc ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .toc ul li {
-    margin: 10px 0;
-  }
-  .toc ul li a {
-    font-size: 18px;
-    color: #fff;
+  .sidebar-close {
+    background: none;
+    border: none;
+    color: #F4B007;
+    font-size: 20px;
+    cursor: pointer;
     transition: color 0.3s ease;
   }
-  .toc ul li a:hover {
+  .sidebar-close:hover {
     color: #90CAF9;
   }
-  .sub-toc {
-    margin-left: 20px;
+  .sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sidebar-menu li {
+    margin: 5px 0;
+  }
+  .sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  .sidebar-menu li a:hover {
+    color: #90CAF9;
+    text-shadow: 0 0 5px #F4B007;
+  }
+  /* Sottomenù */
+  .has-submenu .submenu {
+    display: none;
+    margin-left: 15px;
+    border-left: 2px solid rgba(244, 176, 7, 0.5);
+  }
+  .has-submenu:hover .submenu {
+    display: block;
   }
   
-  /* MAIN CONTENT */
-  .whitepaper-content {
-    max-width: 800px;
-    margin: 0 auto 100px;
-    padding: 20px;
+  /* Main Content */
+  .wp-content {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
-  .whitepaper-content section {
-    margin-bottom: 60px;
-  }
-  .whitepaper-content h2 {
+  .wp-content h2 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     color: #F4B007;
     margin-bottom: 20px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px #F4B007;
-    transition: text-shadow 0.3s ease;
-  }
-  .whitepaper-content h2:hover {
-    text-shadow: 0 0 15px #F4B007;
-  }
-  .whitepaper-content h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    color: #F4B007;
-    margin-bottom: 15px;
     text-shadow: 0 0 8px #F4B007;
   }
-  .whitepaper-content p {
-    font-size: 18px;
+  .wp-content p {
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
   }
   
-  .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #F4B007;
-    color: #000080;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  .back-to-top:hover {
-    background: #e0a800;
-    transform: scale(1.05);
-  }
-  
+  /* Responsive - Mobile */
   @media (max-width: 768px) {
-    .whitepaper-content h2 {
-      font-size: 28px;
+    .wp-layout {
+      flex-direction: column;
     }
-    .whitepaper-content h3 {
-      font-size: 24px;
+    .wp-sidebar {
+      position: fixed;
+      left: -250px;
+      top: 70px; /* Sotto l'header */
+      height: calc(100vh - 70px);
+      z-index: 999;
     }
-    .toc h2 {
-      font-size: 28px;
+    .wp-sidebar.active {
+      transform: translateX(250px);
     }
-    .toc ul li a {
-      font-size: 16px;
+    .wp-content {
+      margin-top: 70px;
+      padding: 20px;
     }
   }
-  
-  .back-button {
-    position: absolute; 
-    left: 20px;           
-    background: none;     
-    border: none;         
-    color: #F4B007;       
-    font-size: 16px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .back-button:hover {
-    color: #90CAF9;       
-  }
-  
   

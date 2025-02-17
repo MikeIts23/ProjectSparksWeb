@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Whitepaper - Sparks</title>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-pcu8pM5nx2tS+SBe6Bzo/V0G3C4IVbE4gUJko93F5oRyhDVNQMV37xMBOlH9kWcczsH1n8ZlP1L+vKZx7i9hHA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Main CSS -->
   <link rel="stylesheet" href="whitepaper.css">
 </head>
 <body>
-    <header class="whitepaper-header">
-        <button class="back-button" onclick="window.location.href='index.html';">
-          ← Back
-        </button>
-        <div class="logo">Sparks Whitepaper</div>
-      </header>
+  <!-- HEADER + SIDEBAR unificati -->
+  <header class="wp-header">
+    <!-- Pulsante "Back" all'estrema sinistra -->
+    <button class="back-button" onclick="window.location.href='html.html';">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <h1 class="wp-title">WHITEPAPER</h1>
+  </header>
 
-  <!-- TABLE OF CONTENTS -->
-  <nav class="toc">
-    <h2>Table of Contents</h2>
-    <ul>
-      <li><a href="#executive-summary">1. Executive Summary</a></li>
-      <li><a href="#introduction">2. Introduction</a></li>
-      <li><a href="#problem-statement">3. Problem Statement</a></li>
-      <li><a href="#the-opportunity">4. The Opportunity</a></li>
-      <li><a href="#sparks">5. SpArks</a></li>
-      <li><a href="#a-new-journey">6. A New Journey</a></li>
-      <li>
-        <a href="#tokenomics">7. Tokenomics</a>
-        <ul class="sub-toc">
-          <li><a href="#space">Space (5%)</a></li>
-          <li><a href="#ecosystem-development">Ecosystem Development (2%)</a></li>
-          <li><a href="#rewards">Rewards (13%)</a></li>
-          <li><a href="#seed-round-1">Seed Round 1 (4%)</a></li>
-          <li><a href="#seed-round-2">Seed Round 2 (7%)</a></li>
-          <li><a href="#team-token">Team (13%)</a></li>
-          <li><a href="#listing">Listing (42%)</a></li>
-          <li><a href="#airdrops">Airdrops (5%)</a></li>
-          <li><a href="#reserve-fund">Reserve Fund (5%)</a></li>
-        </ul>
-      </li>
-      <li><a href="#the-dao">8. The DAO</a></li>
-      <li><a href="#community-space-mission">9. Community Space Mission</a></li>
-      <li><a href="#a-global-comet">10. A Global Comet</a></li>
-      <li><a href="#the-trajectory-ahead">11. The Trajectory Ahead</a></li>
-      <li><a href="#eco-conscious-approach">12. Eco-Conscious Approach</a></li>
-      <li><a href="#igniting-universal-camaraderie">13. Igniting Universal Camaraderie</a></li>
-    </ul>
-  </nav>
+  <!-- LAYOUT: Sidebar + Content -->
+  <div class="wp-layout">
+    <aside class="wp-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Table of Contents</h2>
+        <button class="sidebar-close" id="closeSidebar"><i class="fas fa-times"></i></button>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="#executive-summary"><i class="fas fa-file-alt"></i> Executive Summary</a></li>
+        <li><a href="#introduction"><i class="fas fa-info-circle"></i> Introduction</a></li>
+        <li><a href="#problem-statement"><i class="fas fa-exclamation-triangle"></i> Problem Statement</a></li>
+        <li><a href="#opportunity"><i class="fas fa-lightbulb"></i> The Opportunity</a></li>
+        <li><a href="#sparks"><i class="fas fa-rocket"></i> SpArks</a></li>
+        <li><a href="#new-journey"><i class="fas fa-space-shuttle"></i> A New Journey</a></li>
+        <!-- Sottosezioni (Tokenomics) -->
+        <li class="has-submenu">
+          <a href="#tokenomics"><i class="fas fa-coins"></i> Tokenomics</a>
+          <ul class="submenu">
+            <li><a href="#space">Space (5%)</a></li>
+            <li><a href="#ecosystem-dev">Ecosystem Dev (2%)</a></li>
+            <li><a href="#rewards">Rewards (13%)</a></li>
+            <li><a href="#seed-round-1">Seed Round 1 (4%)</a></li>
+            <li><a href="#seed-round-2">Seed Round 2 (7%)</a></li>
+            <li><a href="#team-token">Team (13%)</a></li>
+            <li><a href="#listing">Listing (42%)</a></li>
+            <li><a href="#airdrops">Airdrops (5%)</a></li>
+            <li><a href="#reserve-fund">Reserve Fund (5%)</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-dao"><i class="fas fa-balance-scale"></i> The DAO</a></li>
+        <li><a href="#community-mission"><i class="fas fa-users"></i> Community Space Mission</a></li>
+        <li><a href="#global-comet"><i class="fas fa-comet"></i> A Global Comet</a></li>
+        <li><a href="#trajectory-ahead"><i class="fas fa-chart-line"></i> The Trajectory Ahead</a></li>
+        <li><a href="#eco-approach"><i class="fas fa-leaf"></i> Eco-Conscious Approach</a></li>
+        <li><a href="#igniting-camaraderie"><i class="fas fa-handshake"></i> Igniting Universal Camaraderie</a></li>
+      </ul>
+    </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="whitepaper-content">
+    <!-- MAIN CONTENT -->
+<main class="wp-content">
+    <!-- 1. Executive Summary -->
     <section id="executive-summary">
-      <h2>1. Executive Summary</h2>
+      <h2>Executive Summary</h2>
       <p>Sparks is a unique, interactive, and energy-efficient digital crowdfunding platform that blends casual
         mobile video games and immersive education-based content to help global users of all age groups
         deepen their understanding of space technologies and proactively partake in democratizing space
@@ -86,8 +100,10 @@
         universe accessible to all. Join us in this galactic revolution and together, we'll navigate a course towards a
         future where the stars are within reach for everyone.</p>
     </section>
+  
+    <!-- 2. Introduction -->
     <section id="introduction">
-      <h2>2. Introduction</h2>
+      <h2>Introduction</h2>
       <p>In the vast expanse of the universe, there exists a universe of potential for education, innovation, and unity.
         SpArks is born out of an ambitious dream to explore these possibilities - particularly to extend the benefits and
         wonders of Space science and exploration to as many people as we can across the globe. We believe in a
@@ -113,8 +129,10 @@
         contributing to Space exploration. Prepare to have your feet on the ground with your eyes looking up at the
         cosmos, engaged and enlightened like never before.</p>
     </section>
+  
+    <!-- 3. Problem Statement -->
     <section id="problem-statement">
-      <h2>3. Problem Statement</h2>
+      <h2>Problem Statement</h2>
       <p>The vast expanses of the universe offer a multitude of opportunities for exploration and growth but are not
         without challenges. A complex interplay of issues, including the general public's disengagement, limited access
         to diversified skills, scarce funding, and a distinct lack of dedicated training frameworks, marks the present
@@ -156,8 +174,10 @@
         way forward necessitates innovative, inclusive, and resource-sensitive strategies that adequately address
         these problems, setting the stage for a future where Space becomes a thriving frontier for all of humanity.</p>
     </section>
+  
+    <!-- 4. The Opportunity -->
     <section id="the-opportunity">
-      <h2>4. The Opportunity</h2>
+      <h2>The Opportunity</h2>
       <p>In the wealth of the cosmos lies an untapped reservoir not just of scientific curiosity, but of human possibility.
         The universal appeal of Space exploration presents an unparalleled opportunity for community engagement,
         education, and inclusion. The liberating potential of bringing together a worldwide collective with shared
@@ -188,8 +208,16 @@
         and shared triumphs. Through our platform, we can transform this opportunity into a palpable reality, making
         Space exploration everyone's adventure.</p>
     </section>
+  
+    <!-- 5. SpArks -->
     <section id="sparks">
-      <h2>5. SpArks</h2>
+      <h2>SpArks</h2>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </section>
+  
+    <!-- 6. A New Journey -->
+    <section id="new-journey">
+      <h2>A New Journey</h2>
       <p>SpArks is a game-changing solution in the world of Space exploration: our one-of-a-kind platform. It's a digital
         arena combining fun, education, crowdfunding, housed within the framework of a Space-themed environment.
         By facilitating public involvement in Space endeavours, our platform takes a gigantic leap towards a future
@@ -235,46 +263,10 @@
         passion and desire of exploration, but it is also the contraction of Space and Arks, the Arks that bring life
         beyond while protecting it, but also the curved trajectories that celestial bodies move in.</p>
     </section>
-    <section id="a-new-journey">
-      <h2>6. A New Journey</h2>
-      <p>Our unique platform is designed to transport users on a thrilling odyssey through Space, all from their personal
-        computers. Structured to balance entertainment, education, and active participation, the journey to becoming
-        a Space explorer has never been so accessible. Here's how this adventure unfolds:
-        Step 1: Engage with the Platform
-        To begin your interstellar adventure, become a community member simply by registering on our platform, we
-        have no preference over mobile or website, what you like the most. Craft your cosmic avatar and witness as
-        your digital dashboard morphs into a springboard, ready to launch you into the cosmos.
-        Step 2: Learn Space
-        After registration, your training commences. Dive headfirst into a plethora of educational content familiarizing
-        you with STEM disciplines that are important in Space in an interactive manner. This content, ranging from
-        informative articles to interactive tutorials and webinars, will guide you in your exploration. Topics extend from
-        celestial mechanics to the history of Space travel, ensuring a comprehensive understanding of the mysteries
-        of the universe.
-        Step 3: Navigate the Gaming Universe
-        Once accustomed to the basics, suit up and venture into our gamified universe. Engage in a range of gripping
-        games designed to be appealing to any generation from Gen Z to Boomers, while enhancing your
-        understanding of Space. Whether navigating through asteroid belts, constructively strategizing new
-        settlements, or decoding the stellar constellations, each game ensures advancement through a fun-filled
-        learning experience.
-        Step 4: Buy and Earn Spark Tokens
-        Spark tokens are your currency within the platform, bringing a layer of reward and opportunity to your fun
-        learning process and act as financial foundation for the Community Space Missions. Perform well in the training
-        or in the games or contribute to the community thoughtfully, and stand a chance to earn SpArks as you
-        progress.
-        Step 5: Crowdfund Space Missions
-        Once you've accumulated SpArks, you are equipped to make strides into real-world Space missions. By
-        contributing your tokens, you actively participate in crowdfunding initiatives for community-chosen Space
-        missions, making strides in democratizing access to Space.
-        Step 6: Participate in Decision-Making
-        Token ownership is more than a financial contribution; it's your path into being a key decision-maker. Help
-        strategize, voice your opinion, and vote on various topics pertinent to Space missions. Your thoughts could
-        shape the trajectory of a mission or impact ground-breaking Space research.
-        We believe there is an explorer in all of us, and our platform is your ticket to embark on this thrilling voyage.
-        It's more than just a digital Space; it's a compact cosmos designed to feed curiosity, foster learning, and inspire
-        shared ownership. We invite you to join us, earn your Space explorer badge, and together reach for the stars.</p>
-    </section>
+  
+    <!-- 7. Tokenomics -->
     <section id="tokenomics">
-      <h2>7. Tokenomics</h2>
+      <h2>Tokenomics</h2>
       <p>The SPARK (SPK), the token on top of which the SpArks ecosystem is built, is going to be the biggest crypto
         for Space exploration development, it will grow as the number of participants into the community grows.
         The token serves the purpose to bring humanity beyond, supporting the funding of exciting space missions,
@@ -304,9 +296,11 @@
          Reserve Fund, aimed partially as a liquidity treasury and partially as an investment treasury. The
         allocated tokes may be used for any necessity as spare. The tokens that are not used will just be kept
         as an investment.</p>
+  
+      <!-- Sottosezioni di Tokenomics -->
       <section id="space">
         <h3>Space (5%)</h3>
-        <p>The Space Seed will be used to fund the development of the 1st initiative that aligns with Sparks primary
+        <p>.The Space Seed will be used to fund the development of the 1st initiative that aligns with Sparks primary
             objective: contribute to elevate mankind into the Solar System. Examples of utilizations are depicted in section
             10.
             Our team will be responsible for identifying and cultivating some projects, while players will have the final say
@@ -327,10 +321,9 @@
             One very important thing to know is that any space mission project takes quite a long time due to the
             specificities of sending robotic items into the far distances with very little, practically none, maintenance.</p>
       </section>
-      <section id="ecosystem-development">
-        <h3>Ecosystem Development (2%)</h3>
-        <p>Ecosystem Development (2%)
-            The Ecosystem Development (ED) Seed will be used as a first funding to the marketing and other necessary
+      <section id="ecosystem-dev">
+        <h3>Ecosystem Dev (2%)</h3>
+        <p>The Ecosystem Development (ED) Seed will be used as a first funding to the marketing and other necessary
             operations that SpArks will go through.
             The selling process of SPK from the ED Seed will be a pre-listing public sale, as the Space Seed wallet is,
             and they will take place contemporary: the public sale will take place 15 months after the TGE will take place,
@@ -440,11 +433,13 @@
         <p>This allocation is used for those unpredicted events, for emergencies, as liquidity for the company and as
             investment.
             These tokens may be used by Sparks for any new idea, extra funding needed, for the opening of a liquidity
-            pool, etc. Those tokens which will not be used for these reasons will remain in this wallet as an investment.</p>
+            pool, etc. Those tokens which will not be used for these reasons will remain in this wallet as an investment..</p>
       </section>
     </section>
+  
+    <!-- 8. The DAO -->
     <section id="the-dao">
-      <h2>8. The DAO</h2>
+      <h2>The DAO</h2>
       <p>Ia Decentralised Autonomous Organisation (DAO) governance model is selected to ensure transparency and
         allow community involvement, thanks to the Smart Contract capabilities. This section refers the main aspects
         of the governance Model
@@ -501,10 +496,23 @@
         Scope of the Mission
         8.5 Voting Token Role
         Voting tokens are allocated out of the reward pool.
-        These special NFTs are given following the rules reported in the following table</p>
+        These special NFTs are given following the rules reported in the following table8.6 Community Feedback and Discussions
+        To foster a culture of open communication and active community participation a specific Discord channel is
+        open for discussions, feedback, and suggestions. These channels are dedicated forums where token holders
+        can engage in meaningful conversations and contribute ideas and perspectives.
+        8.7 Governance Upgrades
+        We believe in continuous improvement and the necessity to adapt the governance structure based on the
+        evolving needs and challenges of the platform. SpArks implement a transparent and inclusive approach to
+        decision-making for changes to the governance model that is reported in section 10.2.
+        8.8 Regular Reporting and Accountability
+        SpArks platform implements regular reporting mechanisms to keep token holders informed about the progress,
+        financials, and any important updates related to the platform. This fosters accountability and transparency,
+        building trust and confidence among the community.</p>
     </section>
-    <section id="community-space-mission">
-      <h2>9. Community Space Mission</h2>
+  
+    <!-- 9. Community Space Mission -->
+    <section id="community-mission">
+      <h2>Community Space Mission</h2>
       <p>Community Space missions are missions decided and voted by the community. SPK tokens acquire voting
         capabilities to people participating to quests (winners) and events in the community, excelling in training (tests
         passed with score above 95%) and in the games (top 5%) or paying for high tiers memberships.
@@ -527,20 +535,12 @@
          Medium Missions are missions that can be developed, launched and set in operations within 5 years,
         the amount required does not exceed 100MEUR.
          Large Missions are missions that can be developed and launched within 5 years, the amount required
-        does not exceed 300MEUR.We expect to have the 9 ideas filtered by Token Generation Event (TGE) + 12 months when there will be the
-        first vote by the community (limited to holder of special voting rights) that will decide the first mission. DAO will
-        be responsible for ensuring the activation of the correct mission class depending on the status of the value of
-        the SPARK and the treasury available.
-        We expect recurrent votes on different mission classes with the time, depending on the growth of the
-        community and the value of the SPARK, decided by the DAO, but with a minimum time between votes of 12
-        months. The DAO will be responsible for the opening and closing of voting and the follow-up of the
-        development.
-        The mission will be followed thoroughly through daily streaming, recurrent webcast and special events that will
-        show the progress of the mission, but also contribute to the scope of educating people to Space technologies
-        and in general to STEM disciplines.</p>
+        does not exceed 300MEUR.</p>
     </section>
-    <section id="a-global-comet">
-      <h2>10. A Global Comet</h2>
+  
+    <!-- 10. A Global Comet -->
+    <section id="global-comet">
+      <h2>A Global Comet</h2>
       <p>Our platform weaves a compelling saga of global unity and shared astronomical curiosity. Born out of a vision
         to democratize Space exploration and weave a global tapestry of Space learning, we are constructing a
         platform designed not merely to educate or engage, but to transcend borders, unify minds, and establish a
@@ -588,7 +588,7 @@
         related jobs.
         
          Fuels Space Exploration: The crowdfunding approach may accelerate the rate of space exploration
-        and discovery, possibly leading to significant scientific breakthroughs.Finally, it aligns with the following UN Sustainable Development Goals: Quality Education (Goal 4): By providing an accessible edutainment platform that advocates for
+        and discovery, possibly leading to significant scientific breakthroughs.Quality Education (Goal 4): By providing an accessible edutainment platform that advocates for
         lifelong learning and promotes interest in STEM fields.
          Industry, Innovation and Infrastructure (Goal 9): The platform enables innovative solutions in the
         form of a digital crowdfunding system and fosters investment in space technology infrastructure.
@@ -599,8 +599,10 @@
          Decent Work and Economic Growth (Goal 8): The project could stimulate economic activity and
         contribute to creating jobs in the space technology sector.</p>
     </section>
-    <section id="the-trajectory-ahead">
-      <h2>11. The Trajectory Ahead</h2>
+  
+    <!-- 11. The Trajectory Ahead -->
+    <section id="trajectory-ahead">
+      <h2>The Trajectory Ahead</h2>
       <p>As we chart the course of our platform, our future encompasses exciting innovations and expansive plans. Our
         vision soars beyond engagement and education; we envision fostering an interstellar community bound by
         shared learning experiences, pioneering explorations, and seamless collaboration.
@@ -629,8 +631,10 @@
         future of outer Space exploration and learning. Come aboard and let’s launch into this astronomical venture
         together, investing in possibilities as infinite as the cosmos itself.</p>
     </section>
-    <section id="eco-conscious-approach">
-      <h2>12. Eco-Conscious Approach</h2>
+  
+    <!-- 12. Eco-Conscious Approach -->
+    <section id="eco-approach">
+      <h2>Eco-Conscious Approach</h2>
       <p>Our cosmic journey is built on an uncompromising approach towards sustainability. We understand that true
         progress is a perfect blend of innovation and environmental responsibility, which is integral to the ethos of our
         platform. We're invested in providing an engaging and game-driven Space exploration experience that is not
@@ -663,9 +667,12 @@
         opens not just the gateway to the cosmos but also to a greener and more sustainable future for digital learning
         and Space exploration.</p>
     </section>
-    <section id="igniting-universal-camaraderie">
-      <h2>13. Igniting Universal Camaraderie</h2>
-      <p>In the vast expanse of the cosmos, every star tells a story, every galaxy holds a mystery. Today, we stand on
+  
+    <!-- 13. Igniting Universal Camaraderie -->
+    <section id="igniting-camaraderie">
+      <h2>Igniting Universal Camaraderie</h2>
+      <p>14 Igniting Universal Camaraderie
+        In the vast expanse of the cosmos, every star tells a story, every galaxy holds a mystery. Today, we stand on
         the brink of a new era, where boundaries melt, and distance loses its meaning. Where Space exploration isn’t
         the exclusive realm of a select few, but a shared dream of mankind. We cordially invite you to join us in this
         extraordinary expedition as we embark on a journey to make the magic of Space exploration accessible to all.
@@ -691,9 +698,7 @@
         contribute, learn, experience, and let's democratise Space exploration together.</p>
     </section>
   </main>
-    <footer>
-        <p>© 2025 SpArks. All Rights Reserved.</p>
-  <a href="#top" class="back-to-top">Back to Top</a>
+  
 
   <script src="whitepaper.js"></script>
 </body>
