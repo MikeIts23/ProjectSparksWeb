@@ -1,0 +1,105 @@
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #001A33, #000B1A);
+    background-attachment: fixed;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* HEADER */
+  .nft-header {
+    position: relative;
+    padding: 20px;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-button {
+    position: absolute; /* Posizionamento assoluto */
+    left: 20px; /* Lo sposta all'estrema sinistra */
+    top: 20px; /* Distanza dalla parte superiore */
+    padding: 15px 30px;
+    background-color: #F4B007; /* Stesso colore del bottone Discover Collection */
+    border: none;
+    border-radius: 8px; /* Smussa gli angoli */
+    color: #000080; /* Testo blu scuro */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .back-button:hover {
+    background-color: #e0a800;
+    box-shadow: 0 0 10px #F4B007;
+  }
+  
+  
+  .nft-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #F4B007;
+    text-shadow: 0 0 10px #F4B007;
+  }
+  
+  /* MAIN CONTENT */
+  .nft-main {
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    padding: 20px;
+  }
+  
+  /* NFT GRID */
+  .nft-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  /* NFT CARD */
+  .nft-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .nft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(244, 176, 7, 0.8);
+  }
+  .nft-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .nft-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #F4B007;
+    text-shadow: 0 0 5px #F4B007;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .nft-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .nft-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

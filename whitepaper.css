@@ -1,4 +1,4 @@
-/* GLOBAL */
+
 body {
     margin: 0;
     padding: 0;
@@ -27,7 +27,6 @@ body {
     text-shadow: 0 0 10px #F4B007;
   }
   
-  /* TABLE OF CONTENTS */
   .toc {
     padding: 40px 20px;
     max-width: 800px;
@@ -96,7 +95,6 @@ body {
     margin-bottom: 20px;
   }
   
-  /* BACK TO TOP */
   .back-to-top {
     position: fixed;
     bottom: 20px;
@@ -114,7 +112,6 @@ body {
     transform: scale(1.05);
   }
   
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     .whitepaper-content h2 {
       font-size: 28px;
@@ -132,17 +129,17 @@ body {
   
   .back-button {
     position: absolute; 
-    left: 20px;           /* All’estrema sinistra */
+    left: 20px;           
     background: none;     
     border: none;         
-    color: #F4B007;       /* Colore futuristico */
+    color: #F4B007;       
     font-size: 16px;
     cursor: pointer;
     transition: color 0.3s ease;
   }
   
   .back-button:hover {
-    color: #90CAF9;       /* Effetto hover neon */
+    color: #90CAF9;       
   }
   
   
