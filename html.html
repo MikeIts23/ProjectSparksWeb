@@ -4,19 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sparks</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css">
+  
+  <!-- FontAwesome per le icone -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ <link rel="stylesheet" href="styles.css">
+  <!-- Ethers.js se necessario -->
   <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 </head>
 <body>
-  <!-- =====================================================
-       HEADER SECTION
-  ===================================================== -->
+  <!-- HEADER SECTION -->
   <header>
     <nav class="navbar">
       <div class="hamburger" id="hamburger">☰</div>
       <div class="logo">Welcome Sparky</div>
+      <div class="header-social">
+        <a href="https://twitter.com/YourProject" target="_blank" class="social-link twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://discord.gg/tuoinvito" target="_blank" class="social-link discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://t.me/tuocanale" target="_blank" class="social-link telegram">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+      </div>
       <div class="header-buttons">
         <button class="btn-login">Login</button>
         <button class="btn-register">Register</button>
@@ -24,6 +38,8 @@
       </div>
     </nav>
   </header>
+</body>
+</html>
 
   <!-- =====================================================
        MENU OVERLAY SECTION
@@ -62,22 +78,18 @@
       <p class="hero-subtitle">
         Discover the power of space innovation and join us.
       </p>
-      <!-- Animated Stats with Icons -->
       <div class="hero-stats">
         <div class="stat">
-          <!-- Rocket Icon for Completed Missions -->
           <div class="stat-icon rocket-icon"></div>
           <span class="number" data-target="15">0</span>
           <p>Completed Missions</p>
         </div>
         <div class="stat">
-          <!-- Astronaut Icon for Explorers -->
           <div class="stat-icon astronaut-icon"></div>
           <span class="number" data-target="500000">0</span>
           <p>Explorers</p>
         </div>
         <div class="stat">
-          <!-- Exchange Icon for Galactic Transactions -->
           <div class="stat-icon exchange-icon"></div>
           <span class="number" data-target="100000">0</span>
           <p>Galactic Transactions</p>

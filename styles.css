@@ -49,19 +49,42 @@ header {
   display: flex;
   gap: 10px;
 }
+/* Posizionamento orizzontale con spazi */
+.header-social {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spaziatura orizzontale tra icone */
+  margin-right: 20px; /* se vuoi spazio extra prima dei pulsanti */
+}
+
+/* Stile base per i link social */
+.social-link {
+  color: #fff; /* colore icona base */
+  font-size: 24px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.social-link:hover {
+  color: #F4B007;
+  text-shadow: 0 0 5px #F4B007;
+}
+
+/* Esempio di stile per i pulsanti (login, register, connect) */
 .header-buttons button {
-  padding: 8px 12px;
+  padding: 12px 24px;
+  background-color: #F4B007; /* giallo */
+  color: #000080;           /* blu scuro */
   border: none;
-  border-radius: 20px;
-  background-color: #F4B007;
-  color: #000080;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10px; /* spaziatura orizzontale */
 }
 .header-buttons button:hover {
-  background-color: #e0a800;
-  box-shadow: 0 0 10px #F4B007;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #F4B007;
 }
 .btn-connect {
   display: flex;
@@ -203,12 +226,30 @@ section h2 {
   margin-bottom: 20px;
   text-transform: uppercase;
   text-shadow: 0 0 10px #F4B007;
+  position: relative; /* Aggiunto qui */
+}
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 60%;
+  height: 2px;
+  background: #F4B007;
+  box-shadow: 0 0 10px #F4B007;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
 }
 section p {
   max-width: 800px;
   margin: 0 auto 40px;
   font-size: 18px;
 }
+
 
 /* =======================
    GAMES SECTION
@@ -499,7 +540,7 @@ section p {
 .token-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 50px;
   margin-bottom: 40px;
 }
 .token-card {
@@ -558,14 +599,14 @@ section p {
   font-family: 'Orbitron', sans-serif;
   font-size: 36px;
   color: #F4B007;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
   text-transform: uppercase;
   text-shadow: 0 0 10px #F4B007;
 }
 .roadmap-container {
   position: relative;
   max-width: 800px;
-  margin: 80px auto 0;
+  margin: 1px auto 0;
   height: 300px;
 }
 .roadmap-path {
@@ -579,7 +620,7 @@ section p {
   border-radius: 8px;
   border: 1px solid #F4B007;
   color: #fff;
-  width: 180px;
+  width: 150px;
   text-align: center;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -590,7 +631,7 @@ section p {
 }
 .item-icon {
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .roadmap-item.item-1 {
   left: 50px;
@@ -794,6 +835,23 @@ footer {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+.stat .number {
+  display: block;             
+  font-size: 48px;           
+  font-weight: bold;
+  color: #F4B007;           
+  text-shadow: 0 0 8px #F4B007;
+  margin-top: 10px;
+}
+
+.stat p {
+  font-size: 20px;           
+  
+  margin-top: 5px;           
+  
+  color: #fff;               
+  
+}
 
 /* =======================
    COMMUNITY SECTION
@@ -993,7 +1051,7 @@ footer {
 .mission-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 40px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -1001,7 +1059,7 @@ footer {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   border-radius: 10px;
-  padding: 50px;
+  padding: 60px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -1024,3 +1082,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
