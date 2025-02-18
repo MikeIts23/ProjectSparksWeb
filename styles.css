@@ -53,14 +53,14 @@ header {
 .header-social {
   display: flex;
   align-items: center;
-  gap: 15px; /* spaziatura orizzontale tra icone */
+  gap: 20px; /* spaziatura orizzontale tra icone */
   margin-right: 20px; /* se vuoi spazio extra prima dei pulsanti */
 }
 
 /* Stile base per i link social */
 .social-link {
   color: #fff; /* colore icona base */
-  font-size: 24px;
+  font-size: 30px;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .social-link:hover {
@@ -75,7 +75,7 @@ header {
   color: #000080;           /* blu scuro */
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
@@ -505,156 +505,284 @@ section p {
 /* =======================
    TOKENOMICS SECTION
 ========================= */
+/* =======================
+   TOKENOMICS SECTION
+========================== */
 .token-section {
   background: linear-gradient(135deg, #001A33, #000B1A);
   padding: 80px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
 }
-.token-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.token-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.section-title {
+.token-section h2 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 48px;
+  font-size: 36px;
   color: #F4B007;
+  margin-bottom: 40px;
   text-transform: uppercase;
   text-shadow: 0 0 10px #F4B007;
-  margin-bottom: 20px;
+  position: relative; /* per posizionare la pseudo-classe ::after */
 }
-.section-subtitle {
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 40px;
+
+.token-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 60%;
+  height: 2px;
+  background: #F4B007;
+  box-shadow: 0 0 10px #F4B007;
+  animation: glow 2s ease-in-out infinite alternate;
 }
-.token-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 50px;
-  margin-bottom: 40px;
+
+@keyframes glow {
+  0%   { opacity: 0.6; }
+  100% { opacity: 1;   }
 }
-.token-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 15px rgba(244, 176, 7, 0.4);
-}
-.token-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(244, 176, 7, 0.7);
-}
-.token-card .card-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-.token-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #F4B007;
-}
-.token-card p {
-  font-size: 16px;
-  color: #fff;
-}
-.floating-coins {
+.token-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Token Coin and Counter */
+.token-coin-section {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+.token-coin {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  animation: coinRotate 6s linear infinite;
+ 
+}
+.token-coin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@keyframes coinRotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Token Live Counters */
+.token-counter {
   margin-top: 20px;
 }
-.coin {
-  width: 30px;
-  height: 30px;
-  background-color: #F4B007;
-  border-radius: 50%;
-  animation: float 3s ease-in-out infinite;
+.counter-item {
+  margin-bottom: 10px;
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.counter-title {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  color: #F4B007;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.counter-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #F4B007;
+  text-shadow: 0 0 8px #F4B007;
+}
+
+/* Token Functions Grid */
+.token-grid {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Flip Card Styles */
+.token-card {
+  perspective: 1000px;
+}
+.token-card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 125%; /* Adjust aspect ratio as needed */
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.token-card:hover .token-card-inner {
+  transform: rotateY(180deg);
+}
+.token-card-front,
+.token-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 2px solid #F4B007;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+.token-card-back {
+  transform: rotateY(180deg);
+}
+.token-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #F4B007;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #F4B007;
+}
+.token-card p {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Hover Effect */
+.token-card:hover .token-card-front,
+.token-card:hover .token-card-back {
+  box-shadow: 0 0 15px rgba(244, 176, 7, 0.8);
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .token-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .token-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =======================
    ROADMAP SECTION
 ========================= */
+/* ROADMAP SECTION */
 .roadmap {
-  padding: 80px 20px;
+  padding: 100px 30px;
   text-align: center;
   background: transparent;
   position: relative;
 }
+
 .roadmap h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 36px;
   color: #F4B007;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
   text-transform: uppercase;
   text-shadow: 0 0 10px #F4B007;
 }
+
+/* Container che racchiude la linea e le fasi */
 .roadmap-container {
   position: relative;
-  max-width: 800px;
-  margin: 1px auto 0;
-  height: 300px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
 }
-.roadmap-path {
-  width: 100%;
-  height: 100%;
-}
-.roadmap-item {
+
+/* Linea tratteggiata di sfondo */
+.roadmap-line {
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #F4B007;
-  color: #fff;
-  width: 150px;
-  text-align: center;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+/* Container degli elementi della roadmap */
+.roadmap-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  gap: 40px;
+}
+
+/* Ogni roadmap item: immagine + card */
+.roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
+
 .roadmap-item:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 0 15px rgba(244, 176, 7, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(244, 176, 7, 0.7);
 }
-.item-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
+
+/* Immagine accanto alla card */
+.roadmap-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
-.roadmap-item.item-1 {
-  left: 50px;
-  top: 150px;
+
+/* Card descrittiva */
+.roadmap-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 15px 20px;
+  text-align: left;
 }
-.roadmap-item.item-2 {
-  left: 400px;
-  top: 70px;
+
+.roadmap-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #F4B007;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #F4B007;
 }
-.roadmap-item.item-3 {
-  left: 750px;
-  top: 150px;
+
+.roadmap-card p {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
 }
-@media (max-width: 800px) {
-  .roadmap-container {
-    width: 100%;
-    height: 250px;
+
+/* Responsive: su dispositivi piccoli, impila verticalmente */
+@media (max-width: 768px) {
+  .roadmap-items {
+    flex-direction: column;
+    gap: 20px;
   }
   .roadmap-item {
-    width: 150px;
-    font-size: 14px;
+    flex-direction: column;
   }
 }
+
 
 /* =======================
    FOOTER
@@ -1082,4 +1210,112 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   VISION SECTION
+========================= */
+.vision {
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent;
+  position: relative;
+}
+
+/* Titolo "Vision" */
+.vision h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  color: #F4B007;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #F4B007;
+}
+
+/* Contenitore orizzontale: immagine a sinistra, cards a destra */
+.vision-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px; /* spazio orizzontale tra immagine e cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Immagine a sinistra */
+.vision-image {
+  flex: 0 0 40%; /* Larghezza fissa o percentuale dell'immagine */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vision-image img {
+  width: 100%;
+  max-width: 400px; /* limita la dimensione massima se vuoi */
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Contenitore delle cards sulla destra */
+.vision-cards {
+  flex: 1; /* Occupa lo spazio rimanente */
+  display: flex;
+  gap: 20px;
+}
+
+/* Ogni card rettangolare */
+.vision-card {
+  flex: 1; /* divide lo spazio tra le 3 card */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 30px; /* angoli molto curvi */
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 2px solid rgba(244,176,7,0.4);
+}
+
+/* Titolo e descrizione della card */
+.vision-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #F4B007;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #F4B007;
+}
+.vision-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Effetto hover */
+.vision-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(244,176,7, 0.6);
+  border-color: #F4B007; /* accentua il bordo in hover */
+}
+
+/* Responsive: su mobile, impila le card sotto l'immagine */
+@media (max-width: 768px) {
+  .vision-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vision-image {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  .vision-cards {
+    flex-direction: column;
+  }
+  .vision-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+
 

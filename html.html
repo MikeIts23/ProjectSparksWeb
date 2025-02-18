@@ -235,37 +235,66 @@
   <section id="roadmap" class="roadmap">
     <h2>Space Roadmap</h2>
     <div class="roadmap-container">
-      <svg class="roadmap-path" viewBox="0 0 800 200" preserveAspectRatio="none">
-        <path d="M50,150 C200,50 600,50 750,150" stroke="#F4B007" stroke-width="4" fill="none" stroke-dasharray="8,8" />
+      <svg class="roadmap-line" viewBox="0 0 1200 200" preserveAspectRatio="none">
+        <path d="M50,150 C300,50 900,50 1150,150" stroke="#F4B007" stroke-width="4" fill="none" stroke-dasharray="8,8" />
       </svg>
-      <div class="roadmap-item item-1">
-        <div class="item-icon rocket-icon">🚀</div>
-        <h3>Phase 1: Launch</h3>
-        <p>A rocket ready to take off with luminous trails.</p>
-      </div>
-      <div class="roadmap-item item-2">
-        <div class="item-icon spaceship-icon">🌌</div>
-        <h3>Phase 2: Expansion</h3>
-        <p>A spacecraft journeying among the stars, growing steadily.</p>
-      </div>
-      <div class="roadmap-item item-3">
-        <div class="item-icon station-icon">🛰️</div>
-        <h3>Phase 3: Space Dominance</h3>
-        <p>A conquered space station, a milestone achieved.</p>
+      <div class="roadmap-items">
+        <div class="roadmap-item">
+          <img src="images/violetrocket.png" alt="Phase 1" class="roadmap-image">
+          <div class="roadmap-card">
+            <h3>Phase 1: Launch</h3>
+            <p>Kick-off of the project with a groundbreaking launch.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <img src="images/111.png" alt="Phase 2" class="roadmap-image">
+          <div class="roadmap-card">
+            <h3>Phase 2: Expansion</h3>
+            <p>Growth through advanced technologies and scaling our ecosystem.</p>
+          </div>
+        </div>
+        <div class="roadmap-item">
+          <img src="images/222.png" alt="Phase 3" class="roadmap-image">
+          <div class="roadmap-card">
+            <h3>Phase 3: Dominance</h3>
+            <p>Establishing a strong position in the digital space.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <!-- =====================================================
        VISION SECTION
   ===================================================== -->
   <section id="vision" class="vision">
     <h2>Vision</h2>
-    <p>
-      Our vision is a digital universe where innovation and space technology merge to create new opportunities.
-    </p>
+    <div class="vision-container">
+      <!-- Immagine a sinistra -->
+      <div class="vision-image">
+        <img src="images/3dastroboyremove.png" alt="Vision" />
+      </div>
+      <div class="vision-cards">
+        <div class="vision-card">
+          <h3>Card Title 1</h3>
+          <p>
+            Descrizione breve della prima parte della visione, con un tocco futuristico.
+          </p>
+        </div>
+        <div class="vision-card">
+          <h3>Card Title 2</h3>
+          <p>
+            Descrizione della seconda parte della visione, evidenziando obiettivi chiave.
+          </p>
+        </div>
+        <div class="vision-card">
+          <h3>Card Title 3</h3>
+          <p>
+            Descrizione della terza parte della visione, sottolineando la crescita del progetto.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
-
   <!-- =====================================================
        COMMUNITY SECTION
   ===================================================== -->
@@ -287,12 +316,138 @@
   <!-- =====================================================
        TOKENOMICS SECTION
   ===================================================== -->
-  <section id="tokenomics" class="tokenomics">
+  <section id="tokenomics" class="token-section">
     <h2>Tokenomics</h2>
-    <p>
-      Explore the economic and technical dynamics behind our token, the digital currency of the universe.
-    </p>
+    <div class="token-container">
+      <div class="token-coin-section">
+        <div class="token-coin">
+          <img src="images/money.png" alt="Token Coin">
+        </div>
+        <div class="token-counter">
+          <div class="counter-item">
+            <span class="counter-title">Max Supply</span>
+            <span class="counter-number" id="maxSupply">1,000,000</span>
+          </div>
+          <div class="counter-item">
+            <span class="counter-title">In Circulation</span>
+            <span class="counter-number" id="circulation">0</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Token Functions Grid -->
+      <div class="token-grid">
+        <!-- Card 1: Governance -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Governance</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Decentralized decision-making and voting rights.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2: Staking -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Staking</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Earn rewards by staking your tokens.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3: Burning -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Burning</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Reduce supply to increase token value.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 4: Reward System -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Reward System</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Distribute rewards to token holders.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 5: Ecosystem Development -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Ecosystem Development</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Invest in new projects and technologies.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 6: Reserve Fund -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Reserve Fund</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Secure funds for future developments.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 7: Liquidity -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Liquidity</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Ensure smooth trading on exchanges.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 8: Listing & Exchange -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Listing & Exchange</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Available on major exchanges.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 9: Community Incentives -->
+        <div class="token-card">
+          <div class="token-card-inner">
+            <div class="token-card-front">
+              <h3>Community Incentives</h3>
+            </div>
+            <div class="token-card-back">
+              <p>Reward active participation and engagement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+  
 
   <!-- =====================================================
        TEAM SLIDER & ADVISORS SECTION

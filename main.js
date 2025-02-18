@@ -261,4 +261,32 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = 'none';
     }
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.vision-card');
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        // Esempio: toggle di una classe "active"
+        this.classList.toggle('active');
+      });
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    // Simula l'aggiornamento live del contatore "In Circulation"
+    const circulationEl = document.getElementById('circulation');
+    let currentCirculation = 0;
+    const targetCirculation = 500000; // Valore target (modifica come necessario)
+  
+    function updateCirculation() {
+      if (currentCirculation < targetCirculation) {
+        currentCirculation += 100; // Incremento per ciclo (modifica in base alle tue esigenze)
+        if (currentCirculation > targetCirculation) {
+          currentCirculation = targetCirculation;
+        }
+        circulationEl.innerText = currentCirculation.toLocaleString();
+        setTimeout(updateCirculation, 50);
+      }
+    }
+    updateCirculation();
+  });
+  
 });
