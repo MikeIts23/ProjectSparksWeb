@@ -256,9 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const chatbotBadge = document.getElementById('chatbot-badge');
   let unreadCount = 0;
   const faq = {
-    "come funziona il progetto?": "Il progetto utilizza tecnologie avanzate per connettere il mondo digitale con lo spazio reale.",
-    "quali sono i costi?": "I costi variano in base ai servizi scelti. Offriamo soluzioni flessibili per ogni esigenza.",
-    "dove trovo il whitepaper?": "Il whitepaper è disponibile sul nostro sito nella sezione dedicata."
+    "How does the project work?": "The project uses advanced technologies to connect the digital world with the real space.",
+    "What are the costs?": "The costs vary depending on the services chosen. We offer flexible solutions for every need.",
+    "Where can I find the whitepaper?": "The whitepaper is available on our website in the dedicated section."
   };
   function appendMessage(message, sender = 'bot') {
     const msgDiv = document.createElement('div');
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return faq[question];
       }
     }
-    return "Mi dispiace, non ho capito la domanda.";
+    return "Im sorry try again.";
   }
   if (chatbotIcon) {
     chatbotIcon.addEventListener('click', function(){
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbotBadge.style.display = 'none';
       }
       if(chatbotMessages.innerHTML === '') {
-        appendMessage("Ciao! Come posso aiutarti oggi?");
+        appendMessage("Hello,how can I help u?");
       }
     });
   }
