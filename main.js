@@ -1,14 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-  /* =====================================================
-     SEZIONE: COLLEGAMENTO HEADER (LOGIN & REGISTER)
-  ===================================================== */
+  // SEZIONE: COLLEGAMENTO HEADER (LOGIN & REGISTER)
   const btnLoginHeader = document.querySelector('.btn-login');
   if (btnLoginHeader) {
     btnLoginHeader.addEventListener('click', function() {
       window.location.href = "login.html";
     });
   }
-
   const btnRegisterHeader = document.querySelector('.btn-register');
   if (btnRegisterHeader) {
     btnRegisterHeader.addEventListener('click', function() {
@@ -16,22 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* =====================================================
-     SEZIONE: MENU OVERLAY E SUBMENU
-  ===================================================== */
+  // SEZIONE: MENU OVERLAY E SUBMENU
   const hamburger = document.getElementById('hamburger');
   const menuOverlay = document.getElementById('menuOverlay');
-
   hamburger.addEventListener('click', function() {
     menuOverlay.classList.toggle('active');
   });
-
   document.querySelectorAll('.menu-overlay a').forEach(item => {
     item.addEventListener('click', function() {
       menuOverlay.classList.remove('active');
     });
   });
-
   document.querySelectorAll('.has-submenu > a').forEach(parentLink => {
     parentLink.addEventListener('click', function(e) {
       e.preventDefault();
@@ -42,9 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* =====================================================
-     SEZIONE: SMOOTH SCROLL
-  ===================================================== */
+  // SEZIONE: SMOOTH SCROLL
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -55,9 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* =====================================================
-     SEZIONE: ANIMAZIONE CONTATORI
-  ===================================================== */
+  // SEZIONE: ANIMAZIONE CONTATORI
   const counters = document.querySelectorAll('.number');
   counters.forEach(counter => {
     const updateCount = () => {
@@ -74,9 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCount();
   });
 
-  /* =====================================================
-     SEZIONE: GESTIONE NEWSLETTER
-  ===================================================== */
+  // SEZIONE: GESTIONE NEWSLETTER
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
@@ -86,11 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* =====================================================
-     SEZIONE: GESTIONE WEB3 WALLET
-  ===================================================== */
+  // SEZIONE: GESTIONE WEB3 WALLET
   const btnConnectWallet = document.getElementById('btnConnectWallet');
-
   function updateWalletUI(account) {
     if (account) {
       const abbreviated = account.substring(0, 6) + '...' + account.substring(account.length - 4);
@@ -99,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
       btnConnectWallet.innerText = '🌐 Connect Wallet';
     }
   }
-
   async function connectWallet() {
     if (typeof window.ethereum !== 'undefined') {
       try {
@@ -115,12 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Nessun wallet rilevato. Installa MetaMask o un wallet compatibile.');
     }
   }
-
   function disconnectWallet() {
     localStorage.removeItem('connectedAccount');
     updateWalletUI(null);
   }
-
   btnConnectWallet.addEventListener('click', function() {
     const connectedAccount = localStorage.getItem('connectedAccount');
     if (connectedAccount) {
@@ -131,12 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
       connectWallet();
     }
   });
-
   const storedAccount = localStorage.getItem('connectedAccount');
   if (storedAccount) {
     updateWalletUI(storedAccount);
   }
-
   if (window.ethereum) {
     window.ethereum.on('accountsChanged', function(accounts) {
       if (accounts.length > 0) {
@@ -148,9 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* =====================================================
-     SEZIONE: SCROLLSPY
-  ===================================================== */
+  // SEZIONE: SCROLLSPY
   const menuLinks = document.querySelectorAll('.menu-items a');
   function updateActiveMenu() {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -168,9 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   window.addEventListener('scroll', updateActiveMenu);
 
-  /* =====================================================
-     SEZIONE: FADE-IN PER LE SEZIONI (Token & Academy)
-  ===================================================== */
+  // SEZIONE: FADE-IN PER LE SEZIONI (Token & Academy)
   const tokenSection = document.querySelector('.token-section');
   if (tokenSection) {
     const observerToken = new IntersectionObserver(entries => {
@@ -183,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.1 });
     observerToken.observe(tokenSection);
   }
-
   const academySection = document.querySelector('.academy');
   if (academySection) {
     const observerAcademy = new IntersectionObserver(entries => {
@@ -197,49 +170,36 @@ document.addEventListener('DOMContentLoaded', function() {
     observerAcademy.observe(academySection);
   }
 
-  /* =====================================================
-     SEZIONE: TEAM SLIDER & MODAL
-     (Assicurati che le frecce .left-arrow e .right-arrow
-      siano FUORI dal track nel tuo HTML, in modo che
-      non si spostino con le immagini.)
-  ===================================================== */
+  // SEZIONE: TEAM SLIDER & MODAL
   const track = document.querySelector('.slider-track');
   const leftArrow = document.querySelector('.left-arrow');
   const rightArrow = document.querySelector('.right-arrow');
   const teamMembers = document.querySelectorAll('.team-member');
-
   let currentIndex = 0;
-  // Calcola la larghezza di ogni card: 220px + 20px margin (a sinistra) + 20px margin (a destra) = 220 + 40
   const memberWidth = teamMembers[0].offsetWidth + 40;
   const totalMembers = teamMembers.length;
-
   leftArrow.addEventListener('click', () => {
     if (currentIndex > 0) {
       currentIndex--;
     } else {
-      currentIndex = totalMembers - 1; // Loop all'ultimo membro
+      currentIndex = totalMembers - 1;
     }
     updateSlider();
   });
-
   rightArrow.addEventListener('click', () => {
     if (currentIndex < totalMembers - 1) {
       currentIndex++;
     } else {
-      currentIndex = 0; // Loop al primo membro
+      currentIndex = 0;
     }
     updateSlider();
   });
-
   function updateSlider() {
     track.style.transform = `translateX(-${currentIndex * memberWidth}px)`;
   }
-
-  // Gestione del modal (se presente) per info aggiuntive sul team
   const modal = document.getElementById('teamModal');
   const modalContent = document.getElementById('memberInfo');
   const closeModal = document.querySelector('.close');
-
   if (teamMembers.length && modal && modalContent) {
     teamMembers.forEach(member => {
       member.addEventListener('click', function() {
@@ -249,36 +209,33 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-
   if (closeModal) {
     closeModal.addEventListener('click', function() {
       modal.style.display = 'none';
     });
   }
-
   window.addEventListener('click', function(e) {
     if (modal && e.target === modal) {
       modal.style.display = 'none';
     }
   });
-  document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.vision-card');
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        // Esempio: toggle di una classe "active"
-        this.classList.toggle('active');
-      });
+
+  // SEZIONE: VISION CARDS (Toggle active)
+  const visionCards = document.querySelectorAll('.vision-card');
+  visionCards.forEach(card => {
+    card.addEventListener('click', function() {
+      this.classList.toggle('active');
     });
   });
-  document.addEventListener('DOMContentLoaded', function() {
-    // Simula l'aggiornamento live del contatore "In Circulation"
-    const circulationEl = document.getElementById('circulation');
+
+  // SEZIONE: UPDATE COUNTER (In Circulation)
+  const circulationEl = document.getElementById('circulation');
+  if (circulationEl) {
     let currentCirculation = 0;
-    const targetCirculation = 500000; // Valore target (modifica come necessario)
-  
+    const targetCirculation = 500000;
     function updateCirculation() {
       if (currentCirculation < targetCirculation) {
-        currentCirculation += 100; // Incremento per ciclo (modifica in base alle tue esigenze)
+        currentCirculation += 100;
         if (currentCirculation > targetCirculation) {
           currentCirculation = targetCirculation;
         }
@@ -287,6 +244,79 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     updateCirculation();
-  });
-  
+  }
+
+  // SEZIONE: CHATBOT
+  const chatbotIcon = document.getElementById('chatbot-icon');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatbotSend = document.getElementById('chatbot-send');
+  const chatbotInput = document.getElementById('chatbot-input');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  const chatbotBadge = document.getElementById('chatbot-badge');
+  let unreadCount = 0;
+  const faq = {
+    "come funziona il progetto?": "Il progetto utilizza tecnologie avanzate per connettere il mondo digitale con lo spazio reale.",
+    "quali sono i costi?": "I costi variano in base ai servizi scelti. Offriamo soluzioni flessibili per ogni esigenza.",
+    "dove trovo il whitepaper?": "Il whitepaper è disponibile sul nostro sito nella sezione dedicata."
+  };
+  function appendMessage(message, sender = 'bot') {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('chatbot-message', sender);
+    msgDiv.textContent = message;
+    chatbotMessages.appendChild(msgDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+  function processInput(input) {
+    const lowerInput = input.toLowerCase();
+    for (let question in faq) {
+      if(lowerInput.includes(question)) {
+        return faq[question];
+      }
+    }
+    return "Mi dispiace, non ho capito la domanda.";
+  }
+  if (chatbotIcon) {
+    chatbotIcon.addEventListener('click', function(){
+      chatbotWindow.style.display = 'flex';
+      chatbotIcon.style.display = 'none';
+      if (unreadCount > 0) {
+        unreadCount = 0;
+        chatbotBadge.textContent = unreadCount;
+        chatbotBadge.style.display = 'none';
+      }
+      if(chatbotMessages.innerHTML === '') {
+        appendMessage("Ciao! Come posso aiutarti oggi?");
+      }
+    });
+  }
+  if (chatbotClose) {
+    chatbotClose.addEventListener('click', function(){
+      chatbotWindow.style.display = 'none';
+      chatbotIcon.style.display = 'flex';
+    });
+  }
+  if (chatbotSend) {
+    chatbotSend.addEventListener('click', function(){
+      const userInput = chatbotInput.value.trim();
+      if(userInput !== '') {
+        appendMessage(userInput, 'user');
+        const response = processInput(userInput);
+        setTimeout(() => {
+          appendMessage(response, 'bot');
+          unreadCount++;
+          chatbotBadge.textContent = unreadCount;
+          chatbotBadge.style.display = 'block';
+        }, 1000);
+        chatbotInput.value = '';
+      }
+    });
+  }
+  if (chatbotInput) {
+    chatbotInput.addEventListener('keypress', function(e){
+      if(e.key === 'Enter') {
+        chatbotSend.click();
+      }
+    });
+  }
 });

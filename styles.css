@@ -1467,6 +1467,126 @@ footer {
     margin: 0 auto;
   }
 }
+/* Chatbot Icon */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+#chatbot-icon {
+  background: #F4B007;
+  color: #000080;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  position: relative;
+}
+#chatbot-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Chat Window */
+#chatbot-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #F4B007;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chat Header */
+#chatbot-header {
+  background: #001A33;
+  padding: 10px;
+  border-bottom: 1px solid #F4B007;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #F4B007;
+}
+#chatbot-header button {
+  background: none;
+  border: none;
+  color: #F4B007;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Chat Messages */
+#chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chatbot-message {
+  margin: 5px 0;
+  padding: 8px 10px;
+  border-radius: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+.chatbot-message.bot {
+  background: #F4B007;
+  color: #000080;
+  align-self: flex-start;
+}
+.chatbot-message.user {
+  background: #2575fc;
+  color: #fff;
+  align-self: flex-end;
+}
+
+/* Chat Input */
+#chatbot-input-container {
+  display: flex;
+  border-top: 1px solid #F4B007;
+}
+#chatbot-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+#chatbot-send {
+  background: #F4B007;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #000080;
+  font-size: 16px;
+}
+
 
 
 
