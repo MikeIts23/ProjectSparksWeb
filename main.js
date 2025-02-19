@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbotBadge.style.display = 'none';
       }
       if(chatbotMessages.innerHTML === '') {
-        appendMessage("Hello,how can I help u?");
+        appendMessage("Hello,how can I help?");
       }
     });
   }
