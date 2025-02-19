@@ -501,10 +501,165 @@ section p {
   background-color: #e0a800;
   box-shadow: 0 0 10px #F4B007;
 }
-
-/* =======================
-   TOKENOMICS SECTION
+/* =========================
+   NUOVA SEZIONE TOKEN
 ========================= */
+.token-new-section {
+  background: linear-gradient(135deg, #001A33, #000B1A);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Titolo "Token" con linea gialla sotto (simile allo stile "Tokenomics") */
+.token-new-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  color: #F4B007;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #F4B007;
+  position: relative; /* per posizionare la pseudo-classe ::after */
+}
+.token-new-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 60%;
+  height: 2px;
+  background: #F4B007;
+  box-shadow: 0 0 10px #F4B007;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  0%   { opacity: 0.6; }
+  100% { opacity: 1;   }
+}
+
+/* Contenitore principale (3 parti: card sinistra, immagine, card destra) + card inferiore */
+.token-new-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Su schermi stretti va a capo */
+}
+
+/* Card laterali (sinistra, destra) */
+.token-new-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 2px solid rgba(244,176,7,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.token-new-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(244,176,7,0.5);
+  border-color: #F4B007; /* accentua il bordo in hover */
+}
+.token-new-card .token-new-card-inner {
+  padding: 20px;
+}
+.token-new-card .token-new-card-inner .card-icon {
+  font-size: 40px;
+  color: #F4B007;
+  margin-bottom: 15px;
+}
+.token-new-card .token-new-card-inner h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #F4B007;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #F4B007;
+}
+.token-new-card .token-new-card-inner p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Immagine centrale animata */
+.token-new-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatToken 3s ease-in-out infinite alternate;
+}
+.token-new-image img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+@keyframes floatToken {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+/* Card inferiore */
+.token-new-bottom-card {
+  margin: 40px auto 0; /* Distanzia dall'alto e centra orizzontalmente */
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 2px solid rgba(244,176,7,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.token-new-bottom-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(244,176,7,0.5);
+  border-color: #F4B007;
+}
+.token-new-bottom-card-inner {
+  padding: 20px 30px;
+  text-align: center;
+}
+.token-new-bottom-card-inner h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  color: #F4B007;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #F4B007;
+}
+.token-new-bottom-card-inner p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Responsive: su mobile, card sinistra e destra vanno sotto l'immagine */
+@media (max-width: 768px) {
+  .token-new-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .token-new-card {
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  .token-new-image {
+    margin-bottom: 20px;
+  }
+}
+
+
 /* =======================
    TOKENOMICS SECTION
 ========================== */
@@ -515,6 +670,7 @@ section p {
   position: relative;
   overflow: hidden;
 }
+/* Titolo "Tokenomics" con linea gialla */
 .token-section h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 36px;
@@ -542,6 +698,7 @@ section p {
   0%   { opacity: 0.6; }
   100% { opacity: 1;   }
 }
+
 .token-container {
   display: flex;
   flex-wrap: wrap;
@@ -566,7 +723,6 @@ section p {
   overflow: hidden;
   position: relative;
   animation: coinRotate 6s linear infinite;
- 
 }
 .token-coin img {
   width: 100%;
@@ -677,10 +833,6 @@ section p {
     grid-template-columns: 1fr;
   }
 }
-
-/* =======================
-   ROADMAP SECTION
-========================= */
 /* ROADMAP SECTION */
 .roadmap {
   padding: 100px 30px;
@@ -703,13 +855,13 @@ section p {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 80px;
 }
 
 /* Linea tratteggiata di sfondo */
 .roadmap-line {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 0;
   width: 100%;
   height: auto;
@@ -723,7 +875,7 @@ section p {
   align-items: center;
   position: relative;
   z-index: 2;
-  gap: 40px;
+  gap: 50px;
 }
 
 /* Ogni roadmap item: immagine + card */

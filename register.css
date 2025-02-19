@@ -1,31 +1,30 @@
+/* GLOBAL STYLES */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    /* Utilizza un gradiente dark per il background */
     background: linear-gradient(135deg, #001A33, #000B1A);
-    background-attachment: fixed; /* Fisso per effetto immersivo */
+    background-attachment: fixed;
     color: #fff;
     overflow-x: hidden;
-}
-  
-a {
+  }
+  a {
     text-decoration: none;
     color: inherit;
-}
+  }
   
-/* CONTAINER DEL LOGIN/REGISTER */
-.login-container {
+  /* CONTAINER DEL LOGIN/REGISTER */
+  .login-container {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     position: relative;
     padding: 20px;
-}
+  }
   
-/* FORM DI LOGIN/REGISTER CON GLASSMORPHISM */
-.login-form {
+  /* FORM DI LOGIN/REGISTER CON GLASSMORPHISM */
+  .login-form {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -36,46 +35,42 @@ a {
     text-align: center;
     position: relative;
     z-index: 2;
-}
-  
-.login-form h2 {
+  }
+  .login-form h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 32px;
     margin-bottom: 20px;
     color: #F4B007;
     text-shadow: 0 0 5px rgba(244, 176, 7, 0.7);
-}
+  }
   
-/* Gruppo di input con icone */
-.input-group {
+  /* INPUT GROUP */
+  .input-group {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 15px;
-}
-  
-.input-group i {
+  }
+  .input-group i {
     margin-right: 10px;
     color: #F4B007;
-}
-  
-.input-group input {
+  }
+  .input-group input {
     width: 100%;
     background: transparent;
     border: none;
     outline: none;
     color: #fff;
     font-size: 16px;
-}
-  
-.input-group input::placeholder {
+  }
+  .input-group input::placeholder {
     color: #ddd;
-}
+  }
   
-/* Pulsante di Login/Registrazione */
-.btn-login {
+  /* BUTTON LOGIN/REGISTER */
+  .btn-login {
     width: 100%;
     padding: 12px;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -87,31 +82,27 @@ a {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
-}
-  
-.btn-login:hover {
+  }
+  .btn-login:hover {
     transform: scale(1.03);
     box-shadow: 0 0 15px rgba(37, 117, 252, 0.8);
-}
+  }
   
-/* Sezione Social Login */
-.social-login {
+  /* SOCIAL LOGIN */
+  .social-login {
     margin-top: 20px;
-}
-  
-.social-login p {
+  }
+  .social-login p {
     margin-bottom: 10px;
     font-size: 16px;
-}
-  
-.social-buttons {
+  }
+  .social-buttons {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 20px;
-}
-  
-.btn-social {
+  }
+  .btn-social {
     flex: 1;
     padding: 10px;
     border: none;
@@ -120,44 +111,41 @@ a {
     font-size: 14px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-  
-.btn-social.google {
+  }
+  .btn-social.google {
     background: #DB4437;
-}
-  
-.btn-social.apple {
+  }
+  .btn-social.apple {
     background: #000;
-}
-  
-.btn-social.facebook {
+  }
+  .btn-social.facebook {
     background: #3b5998;
-}
-  
-.btn-social:hover {
+  }
+  .btn-social:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
+  }
   
-/* Testo per il collegamento a Login/Registrazione */
-.signup {
+  /* LINK DI LOGIN/REGISTER */
+  .signup {
     margin-top: 15px;
     font-size: 16px;
-}
-  
-.signup a {
+  }
+  .signup a {
     color: #F4B007;
     text-decoration: underline;
-}
+  }
   
-@keyframes floatAstronaut {
+  /* ANIMATION */
+  @keyframes floatAstronaut {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
-}
+  }
   
-/* RESPONSIVE */
-@media (max-width: 768px) {
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
     .astronaut {
-        display: none;
+      display: none;
     }
-}
+  }
+  
