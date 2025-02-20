@@ -18,48 +18,39 @@ a {
 /* =======================
    HEADER & NAVIGATION
 ========================= */
-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1001;
-}
+/* Struttura base dell'header */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Spaziatura tra .nav-left e .nav-right */
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.7);
 }
+
+/* Sezioni sinistra e destra */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Spaziatura orizzontale tra elementi */
+}
+
+/* Hamburger */
 .hamburger {
   font-size: 28px;
   cursor: pointer;
   color: #fff;
 }
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.header-buttons {
-  display: flex;
-  gap: 10px;
-}
-/* Posizionamento orizzontale con spazi */
+
+/* Social Icons */
 .header-social {
   display: flex;
   align-items: center;
-  gap: 20px; /* spaziatura orizzontale tra icone */
-  margin-right: 20px; /* se vuoi spazio extra prima dei pulsanti */
+  gap: 20px; /* Spaziatura tra icone */
 }
 
-/* Stile base per i link social */
 .social-link {
-  color: #fff; /* colore icona base */
+  color: #fff;
   font-size: 30px;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -68,11 +59,24 @@ header {
   text-shadow: 0 0 5px #F4B007;
 }
 
-/* Esempio di stile per i pulsanti (login, register, connect) */
+/* Logo al centro */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  /* Tolto position: absolute e transform per evitare sovrapposizioni */
+}
+
+/* Pulsanti di Login & Register */
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
 .header-buttons button {
   padding: 12px 24px;
-  background-color: #F4B007; /* giallo */
-  color: #000080;           /* blu scuro */
+  background-color: #F4B007;
+  color: #000080;
   border: none;
   border-radius: 8px;
   font-size: 14px;
@@ -80,16 +84,12 @@ header {
   cursor: pointer;
   text-transform: uppercase;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 10px; /* spaziatura orizzontale */
 }
 .header-buttons button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #F4B007;
 }
-.btn-connect {
-  display: flex;
-  align-items: center;
-}
+
 
 /* =======================
    MENU OVERLAY
@@ -336,8 +336,6 @@ section p {
   position: relative;
   overflow: hidden;
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
 }
 .academy.visible {

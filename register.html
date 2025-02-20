@@ -37,6 +37,8 @@
           <button type="button" class="btn-social facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
         </div>
       </div>
+      <!-- Web3 Wallet Connect Button -->
+      <button type="button" id="btnConnectWallet" class="btn-wallet">🌐 Connect Wallet</button>
       <p class="signup">Already have an account? <a href="index.html">Login</a></p>
     </div>
   </div>
@@ -47,27 +49,24 @@
       
       registerForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        // Collect data from the form
         const username = registerForm.elements['username'].value;
         const email = registerForm.elements['email'].value;
         const password = registerForm.elements['password'].value;
         
-        // Create a user object (for now, without encryption, for demo purposes)
         const user = {
           username: username,
           email: email,
           password: password,
-          profileImage: 'default-profile.png' // Default profile image
+          profileImage: 'default-profile.png'
         };
         
-        // Save user data in localStorage
         localStorage.setItem('userData', JSON.stringify(user));
         localStorage.setItem('userLoggedIn', 'true');
         
-        // Redirect to the main page (for example, index.html)
         window.location.href = 'index.html';
       });
     });
   </script>
+  <script src="main.js"></script>
 </body>
 </html>

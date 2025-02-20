@@ -72,60 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // SEZIONE: GESTIONE WEB3 WALLET
-  const btnConnectWallet = document.getElementById('btnConnectWallet');
-  function updateWalletUI(account) {
-    if (account) {
-      const abbreviated = account.substring(0, 6) + '...' + account.substring(account.length - 4);
-      btnConnectWallet.innerText = abbreviated;
-    } else {
-      btnConnectWallet.innerText = '🌐 Connect Wallet';
-    }
-  }
-  async function connectWallet() {
-    if (typeof window.ethereum !== 'undefined') {
-      try {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        const account = accounts[0];
-        localStorage.setItem('connectedAccount', account);
-        updateWalletUI(account);
-      } catch (error) {
-        console.error('Connessione wallet rifiutata:', error);
-        alert('Connessione wallet rifiutata.');
-      }
-    } else {
-      alert('Nessun wallet rilevato. Installa MetaMask o un wallet compatibile.');
-    }
-  }
-  function disconnectWallet() {
-    localStorage.removeItem('connectedAccount');
-    updateWalletUI(null);
-  }
-  btnConnectWallet.addEventListener('click', function() {
-    const connectedAccount = localStorage.getItem('connectedAccount');
-    if (connectedAccount) {
-      if (confirm('Vuoi disconnettere il wallet?')) {
-        disconnectWallet();
-      }
-    } else {
-      connectWallet();
-    }
-  });
-  const storedAccount = localStorage.getItem('connectedAccount');
-  if (storedAccount) {
-    updateWalletUI(storedAccount);
-  }
-  if (window.ethereum) {
-    window.ethereum.on('accountsChanged', function(accounts) {
-      if (accounts.length > 0) {
-        localStorage.setItem('connectedAccount', accounts[0]);
-        updateWalletUI(accounts[0]);
-      } else {
-        disconnectWallet();
-      }
-    });
-  }
-
   // SEZIONE: SCROLLSPY
   const menuLinks = document.querySelectorAll('.menu-items a');
   function updateActiveMenu() {
