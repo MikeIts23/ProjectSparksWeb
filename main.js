@@ -67,8 +67,72 @@ document.addEventListener('DOMContentLoaded', function() {
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Grazie per esserti iscritto alla newsletter!');
+      alert('Thank you for subscribing to our newsletter!');
       newsletterForm.reset();
+    });
+  }
+
+  // SEZIONE: GESTIONE WEB3 WALLET
+  const btnConnectWallet = document.getElementById('btnConnectWallet');
+  function updateWalletUI(account) {
+    if (account) {
+      const abbreviated = account.substring(0, 6) + '...' + account.substring(account.length - 4);
+      btnConnectWallet.innerText = abbreviated;
+    } else {
+      btnConnectWallet.innerText = '🌐 Connect Wallet';
+    }
+  }
+  async function connectWallet() {
+    if (typeof window.ethereum !== 'undefined') {
+      try {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        localStorage.setItem('connectedAccount', account);
+        updateWalletUI(account);
+      } catch (error) {
+        console.error('Wallet connection rejected:', error);
+        alert('Wallet connection rejected.');
+      }
+    } else {
+      alert('No wallet detected. Please install MetaMask or a compatible wallet.');
+    }
+  }
+  function disconnectWallet() {
+    localStorage.removeItem('connectedAccount');
+    updateWalletUI(null);
+  }
+  if (btnConnectWallet) {
+    btnConnectWallet.addEventListener('click', function() {
+      const connectedAccount = localStorage.getItem('connectedAccount');
+      if (connectedAccount) {
+        if (confirm('Disconnect wallet?')) {
+          disconnectWallet();
+        }
+      } else {
+        connectWallet();
+      }
+    });
+  }
+  const storedAccount = localStorage.getItem('connectedAccount');
+  if (storedAccount) {
+    updateWalletUI(storedAccount);
+  }
+  if (window.ethereum) {
+    window.ethereum.on('accountsChanged', function(accounts) {
+      if (accounts.length > 0) {
+        localStorage.setItem('connectedAccount', accounts[0]);
+        updateWalletUI(accounts[0]);
+      } else {
+        disconnectWallet();
+      }
+    });
+  }
+
+  // SEZIONE: GOOGLE SIGN-IN (simulated)
+  const btnGoogle = document.querySelector('.btn-social.google');
+  if (btnGoogle) {
+    btnGoogle.addEventListener('click', function() {
+      alert("Google Sign-In functionality is not implemented yet.");
     });
   }
 
@@ -149,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (teamMembers.length && modal && modalContent) {
     teamMembers.forEach(member => {
       member.addEventListener('click', function() {
-        const info = this.getAttribute('data-info') || "Informazioni non disponibili.";
+        const info = this.getAttribute('data-info') || "Information not available.";
         modalContent.innerText = info;
         modal.style.display = 'block';
       });
@@ -216,11 +280,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function processInput(input) {
     const lowerInput = input.toLowerCase();
     for (let question in faq) {
-      if(lowerInput.includes(question)) {
+      if (lowerInput.includes(question)) {
         return faq[question];
       }
     }
-    return "Im sorry try again.";
+    return "I'm sorry, try again.";
   }
   if (chatbotIcon) {
     chatbotIcon.addEventListener('click', function(){
@@ -231,8 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbotBadge.textContent = unreadCount;
         chatbotBadge.style.display = 'none';
       }
-      if(chatbotMessages.innerHTML === '') {
-        appendMessage("Hello,how can I help?");
+      if (chatbotMessages.innerHTML === '') {
+        appendMessage("Hello, how can I help?");
       }
     });
   }
@@ -245,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (chatbotSend) {
     chatbotSend.addEventListener('click', function(){
       const userInput = chatbotInput.value.trim();
-      if(userInput !== '') {
+      if (userInput !== '') {
         appendMessage(userInput, 'user');
         const response = processInput(userInput);
         setTimeout(() => {
@@ -260,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   if (chatbotInput) {
     chatbotInput.addEventListener('keypress', function(e){
-      if(e.key === 'Enter') {
+      if (e.key === 'Enter') {
         chatbotSend.click();
       }
     });
